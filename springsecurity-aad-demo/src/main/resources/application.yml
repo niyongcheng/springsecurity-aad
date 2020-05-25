@@ -1,0 +1,17 @@
+azure:
+  activedirectory:
+    tenant-id: <tenant-id>
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          azure:
+            client-id: <client-id>
+            client-secret: <client-secret>
+  application:
+    name: springsecurity-add
+
+server:
+  port: 8090
