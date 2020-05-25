@@ -1,5 +1,6 @@
-package com.herbalife.is.springsecurityaaddemo.controller;
+package com.herbalife.is.springsecurityaaddemo.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -10,11 +11,9 @@ import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private final OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService;
+    @Autowired
+    private OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService;
 
-    public SecurityConfiguration(OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService) {
-        this.oidcUserService = oidcUserService;
-    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
