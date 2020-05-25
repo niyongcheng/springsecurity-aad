@@ -1,6 +1,8 @@
+
 azure:
   activedirectory:
     tenant-id: <tenant-id>
+    active-directory-groups: group1, group2
 
 spring:
   security:
